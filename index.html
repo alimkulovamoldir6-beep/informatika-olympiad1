@@ -1,46 +1,359 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информатика олимпиадасы</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #eef4ff;
-            text-align: center;
-            padding: 50px;
-        }
+<title>Информатика олимпиадасы</title>
 
-        h1 {
-            color: #1645a3;
-        }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-        p {
-            font-size: 20px;
-        }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f2ff, #f3e8ff);
+  color: #1e293b;
+}
 
-        .btn {
-            background: #1645a3;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            display: inline-block;
-        }
-    </style>
+header {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+.container {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+h2 {
+  color: #2563eb;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 7px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.question {
+  margin-bottom: 25px;
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.question p {
+  font-weight: bold;
+}
+
+.option {
+  display: block;
+  margin: 10px 0;
+  font-weight: normal;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+#result {
+  display: none;
+  text-align: center;
+  background: #dcfce7;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #64748b;
+}
+</style>
 </head>
 
 <body>
 
-    <h1>💻 Информатика олимпиадасы</h1>
+<header>
+  <h1>💻 Информатика олимпиадасы</h1>
+  <p>Ауыл олимпиадасына дайындық сайты</p>
+</header>
 
-    <p>Ауыл олимпиадасына дайындық сайты</p>
+<div class="container">
 
-    <a class="btn" href="#">
-        Тапсырмаларды бастау
-    </a>
+<div class="card">
+  <h2>👨‍🎓 Оқушы туралы ақпарат</h2>
+
+  <label>Аты-жөніңіз:</label>
+  <input type="text" id="studentName" placeholder="Аты-жөніңізді енгізіңіз">
+
+  <label>Сыныбыңыз:</label>
+  <select id="studentClass">
+    <option value="">Сыныпты таңдаңыз</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+  </select>
+
+  <label>Мектебіңіз:</label>
+  <input type="text" id="school" placeholder="Мектеп атауы">
+</div>
+
+<div class="card">
+  <h2>📝 Олимпиада тапсырмалары</h2>
+
+  <form id="quizForm">
+
+    <div class="question">
+      <p>1. Компьютердің негізгі есептеу құрылғысы қайсы?</p>
+
+      <label class="option">
+        <input type="radio" name="q1" value="A"> A) Монитор
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q1" value="B"> B) Процессор
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q1" value="C"> C) Пернетақта
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q1" value="D"> D) Принтер
+      </label>
+    </div>
+
+    <div class="question">
+      <p>2. Python тілінде экранға ақпарат шығару командасы:</p>
+
+      <label class="option">
+        <input type="radio" name="q2" value="A"> A) input()
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q2" value="B"> B) print()
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q2" value="C"> C) output()
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q2" value="D"> D) write()
+      </label>
+    </div>
+
+    <div class="question">
+      <p>3. Алгоритм дегеніміз не?</p>
+
+      <label class="option">
+        <input type="radio" name="q3" value="A"> A) Компьютердің құрылғысы
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q3" value="B"> B) Мәселені шешу қадамдарының реті
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q3" value="C"> C) Интернет желісі
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q3" value="D"> D) Файл түрі
+      </label>
+    </div>
+
+    <div class="question">
+      <p>4. Python тілінде шарт тексеру үшін қандай оператор қолданылады?</p>
+
+      <label class="option">
+        <input type="radio" name="q4" value="A"> A) for
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q4" value="B"> B) while
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q4" value="C"> C) if
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q4" value="D"> D) print
+      </label>
+    </div>
+
+    <div class="question">
+      <p>5. 1 байт неше биттен тұрады?</p>
+
+      <label class="option">
+        <input type="radio" name="q5" value="A"> A) 4
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q5" value="B"> B) 8
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q5" value="C"> C) 16
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q5" value="D"> D) 32
+      </label>
+    </div>
+
+    <button type="submit">📤 Тапсырманы жіберу</button>
+
+  </form>
+
+  <div id="result"></div>
+
+</div>
+</div>
+
+<footer>
+  © 2026 Информатика олимпиадасы
+</footer>
+
+<script>
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzk-kdMqA2zlDuFQp3pnhHid-ER1UP0REApctqABaXVPVYj08GKWbdssRWPSuBLv29txw/exec";
+
+const correctAnswers = {
+  q1: "B",
+  q2: "B",
+  q3: "B",
+  q4: "C",
+  q5: "B"
+};
+
+document.getElementById("quizForm").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const studentName =
+    document.getElementById("studentName").value.trim();
+
+  const studentClass =
+    document.getElementById("studentClass").value;
+
+  const school =
+    document.getElementById("school").value.trim();
+
+  if (!studentName || !studentClass || !school) {
+    alert("Барлық ақпаратты толтырыңыз!");
+    return;
+  }
+
+  let score = 0;
+  let answers = [];
+
+  for (let i = 1; i <= 5; i++) {
+
+    const selected =
+      document.querySelector(`input[name="q${i}"]:checked`);
+
+    const answer = selected ? selected.value : "";
+
+    answers.push(answer);
+
+    if (answer === correctAnswers[`q${i}`]) {
+      score++;
+    }
+  }
+
+  const total = 5;
+
+  const data = {
+    studentName: studentName,
+    studentClass: studentClass,
+    school: school,
+    score: score,
+    total: total,
+    answers: answers.join(","),
+    submittedAt: new Date().toLocaleString("kk-KZ")
+  };
+
+  const formData = new URLSearchParams();
+
+  for (const key in data) {
+    formData.append(key, data[key]);
+  }
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+  })
+  .then(() => {
+
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("result").innerHTML = `
+      <h2>🎉 Нәтиже</h2>
+      <p><b>${studentName}</b></p>
+      <p>Сіз жинаған ұпай: <b>${score} / ${total}</b></p>
+      <p>Нәтиже мұғалімге жіберілді.</p>
+    `;
+
+    document.getElementById("quizForm").reset();
+
+  })
+  .catch(() => {
+    alert("Нәтиже жіберу кезінде қате пайда болды.");
+  });
+
+});
+
+</script>
 
 </body>
 </html>
